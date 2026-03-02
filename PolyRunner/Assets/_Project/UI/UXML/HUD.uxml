@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="hud-root" class="hud-root">
+    <ui:Label name="lap-label" text="Lap 1/3" class="hud-label top-left"/>
+    <ui:Label name="rank-label" text="#1" class="hud-label top-right"/>
+    <ui:Label name="timer-label" text="00:00.0" class="hud-label top-center"/>
+    <ui:VisualElement name="countdown-overlay" class="countdown-overlay">
+      <ui:Label name="countdown-label" text="3" class="countdown-text"/>
+    </ui:VisualElement>
+  </ui:VisualElement>
+</ui:UXML>

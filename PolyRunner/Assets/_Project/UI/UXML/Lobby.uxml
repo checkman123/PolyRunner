@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="lobby-root" class="lobby-root">
+    <ui:Label text="LOBBY" class="title"/>
+    <ui:VisualElement name="player-list" class="player-list"/>
+    <ui:Button name="start-btn" text="START RACE" class="menu-btn"/>
+  </ui:VisualElement>
+</ui:UXML>

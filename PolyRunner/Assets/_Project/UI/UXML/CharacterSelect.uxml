@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="charselect-root" class="charselect-root">
+    <ui:Label text="SELECT CHARACTER" class="title"/>
+    <ui:VisualElement name="char-container" class="char-container"/>
+  </ui:VisualElement>
+</ui:UXML>
