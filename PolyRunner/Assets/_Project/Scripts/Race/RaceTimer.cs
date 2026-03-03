@@ -21,7 +21,7 @@ public class RaceTimer : NetworkBehaviour
 
     private void FixedUpdate()
     {
-        if (IsServer && _running)
+        if (IsServerInitialized && _running)
             _elapsed.Value += Time.fixedDeltaTime;
     }
 }

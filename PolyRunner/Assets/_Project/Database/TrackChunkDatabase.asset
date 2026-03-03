@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0c4f98bdc4912b468f6c319d021b7a8, type: 3}
+  m_Name: TrackChunkDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::TrackChunkDatabase
+  chunks:
+  - prefab: {fileID: 8045932200307299850, guid: 8b5d16e4280e43e4e98b1200c5b333d8, type: 3}
+    weight: 0
+    minDifficulty: 0
+  - prefab: {fileID: 3568652867345857582, guid: 403a96e11feb2314aa46a9f822d9bc26, type: 3}
+    weight: 0
+    minDifficulty: 0
+  - prefab: {fileID: 7813506225301985249, guid: 34b3c2e86a71f9b489fe20cf9f1871be, type: 3}
+    weight: 0
+    minDifficulty: 0

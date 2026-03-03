@@ -40,7 +40,7 @@ public class PlayerNetworkSync : NetworkBehaviour
 
     private void Update()
     {
-        if (IsOwner || IsServer) return;
+        if (IsOwner || IsServerInitialized) return;
         transform.position = Vector3.Lerp(transform.position, _targetPos, smoothSpeed * Time.deltaTime);
         transform.rotation = Quaternion.Slerp(transform.rotation, _targetRot, smoothSpeed * Time.deltaTime);
     }

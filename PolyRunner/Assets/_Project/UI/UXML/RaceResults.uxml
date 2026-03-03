@@ -1,7 +1,8 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements">
-  <ui:VisualElement name="results-root" class="results-root">
-    <ui:Label text="RACE RESULTS" class="title"/>
-    <ui:VisualElement name="results-list" class="results-list"/>
-    <ui:Button name="menu-btn" text="MAIN MENU" class="menu-btn"/>
-  </ui:VisualElement>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/UI/USS/RaceResults.uss?fileID=7433441132597879392&amp;guid=9edebba6822bd9244bd9e32c4ff87b9b&amp;type=3#RaceResults"/>
+    <ui:VisualElement name="results-root" class="results-root">
+        <ui:Label text="RACE RESULTS" class="title"/>
+        <ui:VisualElement name="results-list" class="results-list"/>
+        <ui:Button name="menu-btn" text="MAIN MENU" class="menu-btn"/>
+    </ui:VisualElement>
 </ui:UXML>

@@ -1,8 +1,9 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements">
-  <ui:VisualElement name="menu-root" class="menu-root">
-    <ui:Label text="POLY RUNNER" class="title"/>
-    <ui:TextField name="address-field" label="Server IP" value="localhost" class="input-field"/>
-    <ui:Button name="host-btn" text="HOST GAME" class="menu-btn"/>
-    <ui:Button name="join-btn" text="JOIN GAME" class="menu-btn"/>
-  </ui:VisualElement>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/UI/USS/MainMenu.uss?fileID=7433441132597879392&amp;guid=0463815a32e1293479ef26508b79a02e&amp;type=3#MainMenu"/>
+    <ui:VisualElement name="menu-root" class="menu-root">
+        <ui:Label text="POLY RUNNER" class="title"/>
+        <ui:TextField name="address-field" label="Server IP" value="localhost" class="input-field"/>
+        <ui:Button name="host-btn" text="HOST GAME" class="menu-btn"/>
+        <ui:Button name="join-btn" text="JOIN GAME" class="menu-btn"/>
+    </ui:VisualElement>
 </ui:UXML>

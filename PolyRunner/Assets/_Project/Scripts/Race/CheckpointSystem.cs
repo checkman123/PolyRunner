@@ -18,7 +18,7 @@ public class CheckpointSystem : NetworkBehaviour
     [Server]
     public void OnPlayerHitCheckpoint(PlayerRaceData player, int index, bool isFinish)
     {
-        if (!IsServer) return;
+        if (!IsServerInitialized) return;
         if (player.hasFinished.Value) return;
 
         int expected = player.checkpointIndex.Value + 1;

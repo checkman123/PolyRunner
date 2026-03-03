@@ -23,7 +23,7 @@ public class TrackGenerator : NetworkBehaviour
     public override void OnStartClient()
     {
         base.OnStartClient();
-        if (!IsServer) GenerateTrack();
+        if (!IsServerInitialized) GenerateTrack();
     }
 
     private void GenerateTrack()
