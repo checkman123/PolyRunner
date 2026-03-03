@@ -1,4 +1,5 @@
 using FishNet.Object;
+using Unity.Cinemachine;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -29,10 +30,17 @@ public class PlayerMovement : NetworkBehaviour
     [SerializeField] private float wallCheckDist = 0.6f;
     [SerializeField] private LayerMask wallMask;
 
+    private WallRunHandler _wallRun;
+    private bool _gravityOverridden;
+
+    // Expose grounded state for WallRunHandler
+    public bool IsGrounded => _isGrounded;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         _input = GetComponent<PlayerInputHandler>();
+        _wallRun = GetComponent<WallRunHandler>();
     }
 
     public void ApplyStats(CharacterStatSO stats)
@@ -40,12 +48,19 @@ public class PlayerMovement : NetworkBehaviour
         _stats = stats;
         _rb.mass = stats.mass;
         _stamina = stats.maxStamina;
+        _wallRun?.ApplyStats(stats);
     }
 
     public override void OnStartClient()
     {
         base.OnStartClient();
         if (!IsOwner) _input.enabled = false;
+        var vcam = FindFirstObjectByType<CinemachineCamera>();
+        if (vcam != null)
+        {
+            vcam.Follow = transform;
+            vcam.LookAt = transform;
+        }
     }
 
     private void FixedUpdate()
@@ -116,6 +131,9 @@ public class PlayerMovement : NetworkBehaviour
 
     private void HandleJump()
     {
+        // Wall run handles its own jump
+        if (_wallRun != null && _wallRun.IsWallRunning) return;
+
         if (!_input.JumpPressed) return;
 
         // Wall jump
@@ -199,5 +217,19 @@ public class PlayerMovement : NetworkBehaviour
         _stats.maxSpeed *= multiplier;
         yield return new WaitForSeconds(duration);
         _stats.maxSpeed = orig;
+    }
+
+    /// <summary>Called by WallRunHandler to suppress built-in gravity.</summary>
+    public void SetGravityOverride(bool active)
+    {
+        _gravityOverridden = active;
+        _rb.useGravity = !active;
+    }
+
+    /// <summary>Wall jump rewards the player with their double jump back.</summary>
+    public void RestoreDoubleJump()
+    {
+        _canDoubleJump = true;
+        _jumpCount = 1;
     }
 }

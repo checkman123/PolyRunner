@@ -30,4 +30,15 @@ public class CharacterStatSO : ScriptableObject
 
     [Header("Physics")]
     public float mass = 1f;
+
+    // ── NEW ──────────────────────────────────────────
+    [Header("Wall Run")]
+    public float wallRunSpeed = 14f;          // forward speed while wall running
+    public float wallRunGravity = 2f;         // reduced gravity pull during wall run
+    public float wallRunDuration = 1.8f;      // max seconds before sliding off
+    public float wallRunJumpForce = 10f;      // jump-off force away from wall
+    public float wallRunJumpUpForce = 6f;     // upward component of wall jump
+    public float wallRunMinSpeed = 4f;        // minimum speed required to initiate
+    public float wallDetectDist = 0.75f;      // raycast distance to detect wall
+    // ─────────────────────────────────────────────────
 }
